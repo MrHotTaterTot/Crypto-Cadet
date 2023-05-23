@@ -1,11 +1,19 @@
-from firebase_admin import initialize_app, auth
+API_KEY = "AIzaSyC28aERQpfcKcdJ5DUXTVxUbpVQLh-Mtl8"
 
-MYURL = "https://cryptocadet-743de.firebaseapp.com"
+url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={API_KEY}"
 
-cred_obj = initialize_app(
-    options={"databaseURL": MYURL}, name="cryptocadet-743de"
-).credential
+headers = {
+    "Content-Type": "application/json; charset=UTF-8",
+}
 
+data = {
+    "email": "mieszko@gmail.com",
+    "password": "password",
+    "returnSecureToken": True,
+}
 
-t = cred_obj.get_credential()
-print(t)
+import requests
+
+res = requests.post(url, headers=headers, json=data)
+
+print(res.json())
