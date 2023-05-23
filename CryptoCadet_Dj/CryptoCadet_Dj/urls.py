@@ -15,7 +15,6 @@ Inclhttps://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportM
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_api import urls
 
-urlpatterns = [
-    path("/", admin.site.urls),
-]
+urlpatterns = [path("admin/", admin.site.urls), path("api/", include(urls))]

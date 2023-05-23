@@ -136,3 +136,4 @@ dmypy.json
 # VSCODE settings
 .vscode/
 
+tmp

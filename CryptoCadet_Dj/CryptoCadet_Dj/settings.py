@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("PROD_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "myapp.local"]
 
 
 # Application definition
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    # "CryptoCadet_Rest_Api.apps.CryptoCadetRestApiConfig",
 ]
 
 MIDDLEWARE = [
